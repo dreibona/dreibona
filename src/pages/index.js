@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => {
@@ -7,9 +8,17 @@ const IndexPage = ({ data }) => {
     <Layout pageTitle='Projects'>
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
-          <h3>
-            <Link to={`/projects/${node.slug}`}>{node.frontmatter.title}</Link>
-          </h3>
+          <div>
+            <Link to={`/projects/${node.slug}`}>
+              <div>{node.frontmatter.title}</div>
+              <GatsbyImage
+                image={
+                  node.frontmatter.cover_image.childImageSharp.gatsbyImageData
+                }
+                alt={node.frontmatter.cover_image_alt}
+              />
+            </Link>
+          </div>
           <p>Posted: {node.frontmatter.date}</p>
         </article>
       ))}
@@ -24,6 +33,12 @@ export const query = graphql`
         frontmatter {
           title
           date(formatString: "MMM D, YYYY")
+          cover_image_alt
+          cover_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
         slug
