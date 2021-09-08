@@ -1,17 +1,33 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import {
   container,
   heading,
   navLinks,
   navLinkItem,
   navLinkText,
+  siteTitle,
 } from './layout.module.css';
 
 const Layout = ({ pageTitle, children }) => {
+  /* ============ graphql ============ */
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <div className={container}>
-      <title>{pageTitle}</title>
+      <title>
+        {pageTitle} | {data.site.siteMetadata.title}
+      </title>
+      {/* ============ Header ============ */}
+      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+      {/* ============ Nav ============ */}
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -20,8 +36,8 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to='/work' className={navLinkText}>
-              Work
+            <Link to='/projects' className={navLinkText}>
+              Projects
             </Link>
           </li>
           <li className={navLinkItem}>
@@ -36,6 +52,7 @@ const Layout = ({ pageTitle, children }) => {
           </li>
         </ul>
       </nav>
+      {/* ============ Main ============ */}
       <main>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
