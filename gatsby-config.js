@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Dreibona Design",
+    siteUrl: 'https://dreibona.design',
+    title: 'Dreibona Design',
   },
-  plugins: [],
+  plugins: ['gatsby-plugin-image', 'gatsby-plugin-sharp'],
 };
