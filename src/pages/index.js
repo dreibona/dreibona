@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => {
@@ -12,10 +12,8 @@ const IndexPage = ({ data }) => {
             <Link to={`/projects/${node.slug}`}>
               <div>{node.frontmatter.title}</div>
               <GatsbyImage
-                image={
-                  node.frontmatter.cover_image.childImageSharp.gatsbyImageData
-                }
-                alt={node.frontmatter.cover_image_alt}
+                image={getImage(node.frontmatter.imageCover)}
+                alt={node.frontmatter.imageCoverAlt}
               />
             </Link>
           </div>
@@ -33,8 +31,8 @@ export const query = graphql`
         frontmatter {
           title
           date(formatString: "MMM D, YYYY")
-          cover_image_alt
-          cover_image {
+          imageCoverAlt
+          imageCover {
             childImageSharp {
               gatsbyImageData
             }
