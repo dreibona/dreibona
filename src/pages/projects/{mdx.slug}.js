@@ -2,7 +2,8 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+/* import { GatsbyImage, getImage } from 'gatsby-plugin-image'; */
+
 import Layout from '../../components/layout';
 
 const ProjectPage = ({
