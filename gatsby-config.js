@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    url: 'https://dreibona.design',
+    siteUrl: 'https://dreibona.design',
     title: 'Dreibona',
     description: "Dreibona's Portfolio",
     author: 'Dreibona',
@@ -26,5 +26,21 @@ module.exports = {
       },
     },
     'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://dreibona.design',
+        sitemap: 'https://dreibona.design/sitemap-index.xml',
+        policy: [{ userAgent: '*', disallow: ['/'] }],
+        crawlDelay: 2,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/',
+        excludes: ['/about'],
+      },
+    },
   ],
 };

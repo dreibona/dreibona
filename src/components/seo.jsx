@@ -12,7 +12,7 @@ function Seo({ description, lang, meta, title }) {
             title
             description
             author
-            url
+            siteUrl
             keywords
             image
           }
@@ -34,6 +34,38 @@ function Seo({ description, lang, meta, title }) {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
+        {
+          name: `robots`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `AdsBot-Google`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `bingbot`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `msnbot`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `Slurp`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `DuckDuckBot`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `Baiduspider`,
+          content: `noindex,nofollow`,
+        },
+        {
+          name: `YandexBot`,
+          content: `noindex,nofollow`,
+        },
         {
           name: `description`,
           content: metaDescription,

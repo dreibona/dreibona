@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import Seo from '../components/seo';
+import Seo from './seo';
 import {
   container,
   heading,
