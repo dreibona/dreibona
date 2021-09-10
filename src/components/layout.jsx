@@ -1,63 +1,17 @@
 import * as React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import Seo from './seo';
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle,
-} from './layout.module.css';
+import Seo from './Seo';
+import Header from './Header';
+import Main from './Main';
 
 const Layout = ({ pageTitle, children }) => {
-  /* ============ graphql ============ */
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
   return (
-    <div className={container}>
-      {/* ============ SEO ============ */}
-      <Seo title={pageTitle} />
-      {/* ============ Header ============ */}
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      {/* ============ Nav ============ */}
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
-              Projects
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/about' className={navLinkText}>
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/photos' className={navLinkText}>
-              Photos
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/notes' className={navLinkText}>
-              Notes
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      {/* ============ Main ============ */}
-      <main>
-        <h1 className={heading}>{pageTitle}</h1>
-        {children}
-      </main>
+    <div className='container mx-auto'>
+      <div className='mt-6 mx-4 xs:mt-16 xs:mx-0'>
+        <Seo title={pageTitle} />
+        <Header />
+        <Main>{children}</Main>
+      </div>
     </div>
   );
 };

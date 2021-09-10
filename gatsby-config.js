@@ -8,6 +8,9 @@ module.exports = {
     image: 'src/images/dreibona.jpg',
   },
   plugins: [
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
@@ -15,8 +18,6 @@ module.exports = {
         siteUrl: `https://dreibona.design`,
       },
     },
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',

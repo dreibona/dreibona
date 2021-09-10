@@ -2,14 +2,13 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-/* import { GatsbyImage, getImage } from 'gatsby-plugin-image'; */
 
 import Layout from '../../components/layout';
 
 const ProjectPage = ({
   data: {
     mdx: {
-      frontmatter: { title, date, imageCoverAlt, imageCover, imagesLocal },
+      frontmatter: { title, imagesLocal },
       body,
     },
   },
@@ -17,8 +16,6 @@ const ProjectPage = ({
   return (
     <Layout pageTitle={title}>
       <MDXProvider>
-        {/* <p>{date}</p>
-         <GatsbyImage image={getImage(imageCover)} alt={imageCoverAlt} /> */}
         <MDXRenderer localImages={imagesLocal}>{body}</MDXRenderer>
       </MDXProvider>
     </Layout>

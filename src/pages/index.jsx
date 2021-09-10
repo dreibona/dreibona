@@ -3,24 +3,24 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
+import GridIndex from '../components/GridIndex';
 
 const IndexPage = ({ data }) => {
   return (
     <Layout pageTitle='Projects'>
-      {data.allMdx.nodes.map((node) => (
-        <article key={node.id}>
-          <div>
+      <GridIndex>
+        {data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
             <Link to={`/projects/${node.slug}`}>
-              <div>{node.frontmatter.title}</div>
+              {/* <div>{node.frontmatter.title}</div> */}
               <GatsbyImage
                 image={getImage(node.frontmatter.imageCover)}
                 alt={node.frontmatter.imageCoverAlt}
               />
             </Link>
-          </div>
-          <p>Posted: {node.frontmatter.date}</p>
-        </article>
-      ))}
+          </article>
+        ))}
+      </GridIndex>
     </Layout>
   );
 };
