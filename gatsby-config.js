@@ -4,7 +4,7 @@ module.exports = {
     title: 'Dreibona',
     description: "Dreibona's Portfolio",
     author: 'Dreibona',
-    keywords: 'design, ux, ui, gatsby',
+    keywords: 'design,ux,ui,gatsby',
     image: 'src/images/dreibona.jpg',
   },
   plugins: [
