@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import GridIndex from '../components/GridIndex';
 
 const IndexPage = ({ data }) => {

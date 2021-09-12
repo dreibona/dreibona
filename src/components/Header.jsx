@@ -15,7 +15,9 @@ const Header = () => {
     <header>
       <div className='xs:grid grid-cols-2 items-baseline'>
         <h1 className='font-bold'>
-          <Link to='/'>{data.site.siteMetadata.title}</Link>
+          <Link to='/' className='!shadow-none'>
+            {data.site.siteMetadata.title}
+          </Link>
         </h1>
         <nav className='mt-4'>
           <ul className='grid grid-cols-3 place-items-center'>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 
-import Layout from '../../components/layout';
+import Layout from '../../components/Layout';
 
 const ProjectPage = ({
   data: {
@@ -15,9 +15,11 @@ const ProjectPage = ({
 }) => {
   return (
     <Layout pageTitle={title}>
-      <MDXProvider>
-        <MDXRenderer localImages={imagesLocal}>{body}</MDXRenderer>
-      </MDXProvider>
+      <article class='prose prose-lg md:prose-xl xl:prose-2xl max-w-none'>
+        <MDXProvider>
+          <MDXRenderer localImages={imagesLocal}>{body}</MDXRenderer>
+        </MDXProvider>
+      </article>
     </Layout>
   );
 };

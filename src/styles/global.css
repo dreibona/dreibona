@@ -1,34 +1,7 @@
 @tailwind base;
-/* ============ Custom CSS ============ */
+
 @layer base {
-  h1 {
-    @apply text-4xl;
-    font-family: 'Josefin Slab';
-  }
-  h2 {
-    @apply text-3xl;
-    font-family: 'Josefin Slab';
-  }
-  h3 {
-    @apply text-2xl;
-    font-family: 'Josefin Slab';
-  }
-  h4 {
-    @apply text-xl;
-    font-family: 'Josefin Slab';
-  }
-  h5 {
-    @apply text-lg;
-    font-family: 'Josefin Slab';
-  }
-  h6 {
-    @apply text-base;
-    font-family: 'Josefin Slab';
-  }
-  p {
-    @apply text-sm;
-    font-family: 'Public Sans';
-  }
+  /* =========== Custom Fonts ============ */
   @font-face {
     font-family: 'Public Sans';
     src: url(../fonts/PublicSans-VariableFont_wght.ttf);
@@ -36,6 +9,29 @@
   @font-face {
     font-family: 'Josefin Slab';
     src: url(../fonts/JosefinSlab-VariableFont_wght.ttf);
+  }
+  /* ========== Typography Fix ========== */
+  img {
+    @apply !m-0;
+  }
+  .prose a {
+    @apply !no-underline;
+  }
+  /* ========== Custom Styles =========== */
+  * {
+    @apply text-gray-900;
+  }
+  ::selection {
+    @apply bg-yellow-300;
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    @apply font-serif;
+  }
+  p {
+    @apply font-sans;
+  }
+  a {
+    @apply no-underline shadow-link transition-all duration-200 hover:shadow-hover;
   }
 }
 /* ==================================== */
