@@ -6,7 +6,7 @@ import Head from './Head';
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div className='container mx-auto max-w-2xl lg:max-w-4xl'>
+    <div className='container mx-auto max-w-screen-sm md:max-w-2xl lg:max-w-4xl xl:max-w-screen-lg'>
       <div className='mt-6 mx-4'>
         <Head title={pageTitle} />
         <Header />

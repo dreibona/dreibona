@@ -3,16 +3,21 @@ module.exports = {
   purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      xs: '540px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
-      screens: {
-        xs: '540px',
-      },
       zIndex: {
         '-1': '-1',
       },
       boxShadow: {
-        link: '0 -4px 0 0 rgba(252, 211, 77, .5) inset',
-        hover: '0 -26px 0 0 rgba(252, 211, 77, .5) inset',
+        link: '0 -3px 0 0 rgba(252, 211, 77, .5) inset',
+        hover: '0 -28px 0 0 rgba(252, 211, 77, .5) inset',
       },
     },
     fontFamily: {

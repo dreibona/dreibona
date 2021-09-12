@@ -14,9 +14,6 @@
   img {
     @apply !m-0;
   }
-  .prose a {
-    @apply !no-underline;
-  }
   /* ========== Custom Styles =========== */
   * {
     @apply text-gray-900;
@@ -31,7 +28,7 @@
     @apply font-sans;
   }
   a {
-    @apply no-underline shadow-link transition-all duration-200 hover:shadow-hover;
+    @apply !no-underline shadow-link transition-all duration-300 hover:shadow-hover;
   }
 }
 /* ==================================== */

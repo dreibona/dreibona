@@ -12,6 +12,8 @@ imagesLocal:
 
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
+import GridProject from '../../src/components/GridProject';
+
 # Post Body
 
 <GatsbyImage alt='orange doggo' image={getImage(props.localImages[2])} />
@@ -20,9 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend iaculis 
 
 ## Local Images
 
-<div>
-
-<GatsbyImage alt='green doggo' image={getImage(props.localImages[0])} />
-<GatsbyImage alt='orange doggo' image={getImage(props.localImages[1])} />
-
-</div>
+<GridProject>
+  <GatsbyImage alt='green doggo' image={getImage(props.localImages[0])} />
+  <GatsbyImage alt='orange doggo' image={getImage(props.localImages[1])} />
+</GridProject>

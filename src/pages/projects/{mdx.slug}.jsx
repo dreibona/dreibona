@@ -15,11 +15,11 @@ const ProjectPage = ({
 }) => {
   return (
     <Layout pageTitle={title}>
-      <article class='prose prose-lg md:prose-xl xl:prose-2xl max-w-none'>
-        <MDXProvider>
+      <MDXProvider>
+        <article class='prose prose-lg lg:prose-xl xl:prose-2xl max-w-none'>
           <MDXRenderer localImages={imagesLocal}>{body}</MDXRenderer>
-        </MDXProvider>
-      </article>
+        </article>
+      </MDXProvider>
     </Layout>
   );
 };
