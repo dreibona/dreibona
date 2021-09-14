@@ -16,7 +16,7 @@ const ProjectPage = ({
   return (
     <Layout pageTitle={title}>
       <MDXProvider>
-        <article class='prose prose-lg lg:prose-xl xl:prose-2xl max-w-none'>
+        <article class='prose lg:prose-xl xl:prose-2xl max-w-none'>
           <MDXRenderer localImages={imagesLocal}>{body}</MDXRenderer>
         </article>
       </MDXProvider>

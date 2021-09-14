@@ -12,6 +12,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      skew: {
+        '-20': '-20deg',
+      },
       zIndex: {
         '-1': '-1',
       },
@@ -47,6 +50,9 @@ module.exports = {
         'Times',
         'serif',
       ],
+    },
+    transitionTimingFunction: {
+      elastic: 'cubic-bezier(1,-0.65,0,2.31)',
     },
   },
   variants: {

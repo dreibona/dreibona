@@ -1,36 +1,31 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   /* =========== Custom Fonts ============ */
   @font-face {
-    font-family: 'Public Sans';
-    src: url(../fonts/PublicSans-VariableFont_wght.ttf);
-  }
-  @font-face {
-    font-family: 'Josefin Slab';
-    src: url(../fonts/JosefinSlab-VariableFont_wght.ttf);
+    font-family: 'radnika_next';
+    src: url('../fonts/radnikanext-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
   /* ========== Typography Fix ========== */
   img {
     @apply !m-0;
   }
   /* ========== Custom Styles =========== */
-  * {
+  body {
     @apply text-gray-900;
+    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
   }
   ::selection {
     @apply bg-yellow-300;
   }
-  :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-serif;
-  }
-  p {
-    @apply font-sans;
-  }
-  a {
+  /*  a {
     @apply !no-underline shadow-link transition-all duration-300 hover:shadow-hover;
-  }
+  } */
 }
 /* ==================================== */
-@tailwind components;
-@tailwind utilities;
