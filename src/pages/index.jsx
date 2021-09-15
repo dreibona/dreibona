@@ -9,22 +9,26 @@ const IndexPage = ({ data }) => {
   return (
     <Layout pageTitle='Projects'>
       <GridIndex>
-        {data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-            <Link to={`/projects/${node.slug}`}>
-              {/* <div>{node.frontmatter.title}</div> */}
-              <GatsbyImage
-                image={getImage(node.frontmatter.imageCover)}
-                alt={node.frontmatter.imageCoverAlt}
-              />
-            </Link>
+        {data.allMdx.nodes.map((node, i) => (
+          <article key={node.id} className={i === 3 ? 'md:col-start-2' : ''}>
+            <div className='relative'>
+              <Link to={`/projects/${node.slug}`}>
+                <div className='absolute z-10 bottom-0 p-2 text-4xl'>
+                  <div>{node.frontmatter.title}</div>
+                </div>
+                <GatsbyImage
+                  image={getImage(node.frontmatter.imageCover)}
+                  alt={node.frontmatter.imageCoverAlt}
+                  className='h-auto xs:square z-0'
+                />
+              </Link>
+            </div>
           </article>
         ))}
       </GridIndex>
     </Layout>
   );
 };
-
 export const query = graphql`
   query {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
@@ -45,5 +49,4 @@ export const query = graphql`
     }
   }
 `;
-
 export default IndexPage;

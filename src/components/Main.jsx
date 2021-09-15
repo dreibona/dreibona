@@ -1,7 +1,10 @@
 import * as React from 'react';
 
 const Main = ({ children }) => {
-  return <main className='mt-10 md:mt-16 xl:mt-24'>{children}</main>;
+  return (
+    <main className='container mx-auto max-w-screen-lg mt-8 p-6'>
+      {children}
+    </main>
+  );
 };
-
 export default Main;

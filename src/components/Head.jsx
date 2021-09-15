@@ -20,12 +20,10 @@ function Head({ description, lang, meta, title }) {
       }
     `
   );
-
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const keywords = site.siteMetadata.keywords;
   const image = site.siteMetadata.image;
-
   return (
     <Helmet
       htmlAttributes={{
@@ -114,18 +112,15 @@ function Head({ description, lang, meta, title }) {
     />
   );
 }
-
 Head.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 };
-
 Head.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 };
-
 export default Head;

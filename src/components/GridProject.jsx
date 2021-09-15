@@ -7,5 +7,4 @@ const GridProject = ({ children }) => {
     </span>
   );
 };
-
 export default GridProject;

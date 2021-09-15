@@ -28,4 +28,10 @@
     @apply !no-underline shadow-link transition-all duration-300 hover:shadow-hover;
   } */
 }
+
+@layer utilities {
+  .square {
+    aspect-ratio: 1 / 1;
+  }
+}
 /* ==================================== */

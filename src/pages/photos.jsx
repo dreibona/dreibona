@@ -9,5 +9,4 @@ const PhotosPage = () => {
     </Layout>
   );
 };
-
 export default PhotosPage;

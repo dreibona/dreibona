@@ -1,5 +1,5 @@
-/* import * as React from 'react'; */
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 const links = [
@@ -7,7 +7,6 @@ const links = [
   { name: 'About', target: '/about' },
   { name: 'Photos', target: '/photos' },
 ];
-
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
@@ -75,5 +74,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

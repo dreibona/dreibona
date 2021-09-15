@@ -23,7 +23,6 @@ const ProjectPage = ({
     </Layout>
   );
 };
-
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
@@ -46,5 +45,4 @@ export const query = graphql`
     }
   }
 `;
-
 export default ProjectPage;
